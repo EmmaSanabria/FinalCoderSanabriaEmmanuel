@@ -1,0 +1,17 @@
+{% extends 'structure_empty.html' %}
+
+{% block formulario %}
+
+<form action="{% url 'register' %}" method="POST">
+    <div class="container"></div>    
+        <div class="col-lg-12 bajarLogin">
+            <h4 class="mb-4 mt-3">Registre su cuenta:</h4>
+            {{user_creation_form.as_p}} {% csrf_token %}
+            <button type="submit">Registrarse </button>
+        </div>
+        
+    </div>
+</form>
+
+
+{% endblock formulario %}

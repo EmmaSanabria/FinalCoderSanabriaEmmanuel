@@ -1,0 +1,13 @@
+{% extends 'structure_empty.html' %}
+
+{% block formulario %}
+<div class="bajarLogin">
+    <form action="{% url 'update-staff' Staff.id %}" method="POST" enctype = "multipart/form-data">
+        <h1>Editando: {{staff.name}}</h1>
+        {{form.as_p}} {% csrf_token %}
+
+        <input type="submit" value="Actualizar">
+
+    </form>
+</div>
+{% endblock formulario %}

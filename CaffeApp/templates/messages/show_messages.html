@@ -1,0 +1,39 @@
+{% extends 'structure_empty.html' %}
+
+{% block formulario %}
+        
+    
+    {% if messages %}
+    <div class="bajarLogin">
+        <div class="col-lg-6">
+            <h1> Lista de reservaciones</h1>
+            <ul class="w3-ul w3-hoverable">
+        
+                {% for reserv in messages %}
+                    {% if reserv.name and reserv.date %}
+                    <hr>
+                        <li> 
+                            <p> Nombre: {{reserv.name}} </p>
+                            <p> Email: {{reserv.email}}</p>
+                            <p> Telefono: {{reserv.phone}}</p>
+                            <p> Candidad de comensales: {{reserv.number_guest}}</p>
+                            <p>  Fecha: {{reserv.date}} </p>
+                            <p>  Hora: {{reserv.time}}</p>
+                            <p> Mensaje: {{reserv.message}}</p>
+                        </li>
+                        <div class="mover" style="display: flex; column-gap: 5px;">
+                            <button>
+                                <a href="{% url 'delete-messages' reserv.id %}">Eliminar</a> 
+                            </button>
+                        </div>
+                        <hr>
+    
+                    {% endif %}
+                {% endfor %}      
+            </ul>
+        </div>
+    </div>
+    {% else %}
+        <h1 class="col-lg-6 bajarLogin">Lista de reservas no disponibles.</h1>
+    {% endif %}
+{% endblock formulario %}

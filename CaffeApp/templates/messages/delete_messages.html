@@ -1,0 +1,13 @@
+{% extends 'structure_empty.html' %}
+
+{% block formulario %}
+<div class="bajarLogin" style="display: flex; column-gap: 5px;">
+    <form method="POST">{% csrf_token %}
+        <p>¿Esta seguro que desea eliminar la reservacion?</p>
+
+            <button class="mover" type="submit">Confirmar</button>
+            <button class="mover"><a href="{% url 'my-reservations' %}">Cancelar</a></button>
+
+    </form>
+</div>
+{% endblock formulario %}

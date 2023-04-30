@@ -1,0 +1,17 @@
+{% extends 'structure_empty.html' %}
+
+{% block formulario %}
+
+<div style="border: 5px solid #ccc; padding: 20px; margin-top: 10%; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;">
+    <h1>User Profile</h1>
+    <p>Username: {{ User.username }}</p>
+    <p>Email: {{ User.email }}</p>
+    <p>First name: {{ User.first_name }}</p>
+    <p>Last name: {{ User.last_name }}</p>
+    <button>
+      <a href="{% url 'lists-staff' %}">Volver</a>
+    </button>
+  </div>
+  
+
+{% endblock formulario %}

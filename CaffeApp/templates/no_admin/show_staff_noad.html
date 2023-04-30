@@ -1,0 +1,31 @@
+{% extends 'structure_empty.html' %}
+
+{% block formulario %}
+<div class="bajarLogin">        
+    <h1> Lista de staff</h1>
+
+    {% if Staff %}
+    <ul>
+        {% for employee in Staff %}
+            {% if employee.name and employee.last_name %}
+            <hr>
+
+                <li> 
+                    <p class="mover"> {{employee.name}} {{employee.last_name}}</p>
+                    <img src="{{ employee.image.url }}">
+                </li>
+                    <div class="mover" style="display: flex; column-gap: 5px;">
+                        <button>
+                            <a href="{% url 'detail-staff-noad' employee.id %}"> Mas informacion </a> 
+                        </button>
+                    </div>
+                    <hr>
+
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No staff available.</p>
+    {% endif %}
+</div>
+{% endblock formulario %}

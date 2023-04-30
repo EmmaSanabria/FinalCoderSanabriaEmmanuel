@@ -1,0 +1,35 @@
+{% extends 'structure_empty.html' %}
+
+{% block formulario %}
+        
+    
+    {% if promo %}
+    <div class="bajarLogin">
+        <div class="col-lg-6">
+            <h1> Lista de promociones</h1>
+            <ul class="w3-ul w3-hoverable">
+        
+                {% for promocion in promo %}
+                    {% if promocion.name and promocion.price %}
+                    <hr>
+    
+                        <li> 
+                            <p class="mover"> {{promocion.name}} {{promocion.price}}</p>
+                            <img src="{{ promocion.image.url }}">
+                        </li>
+                        <div class="mover" style="display: flex; column-gap: 5px;">
+                            <button>
+                                <a href="{% url 'detail-promo-noad' promocion.id %}">Mas informacion</a> 
+                            </button>
+                        </div>
+                        <hr>
+    
+                    {% endif %}
+                {% endfor %}      
+            </ul>
+        </div>
+    </div>
+    {% else %}
+        <h1 class="col-lg-6 bajarLogin">Promocion no disponible.</h1>
+    {% endif %}
+{% endblock formulario %}

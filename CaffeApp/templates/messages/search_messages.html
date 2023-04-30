@@ -1,0 +1,32 @@
+{% extends 'structure_empty.html' %}
+
+{% block formulario %}
+<div class="bajar">
+        <h1>Aqui estan las reservaciones que busca:</h1>                
+    <b>    
+    {% if messages %}
+    <ul>
+        {% for reserv in messages %}
+        <li>
+            <h3>Nombre: {{ reserv.name }}</h3>
+            <p>Email: {{ reserv.email }}</p>
+            <p>Teléfono: {{ reserv.phone }}</p>
+            <p>Número de invitados: {{ reserv.number_guests }}</p>
+            <p>Fecha: {{ reserv.date }}</p>
+            <p>Hora: {{ reserv.time }}</p>
+            <p>Mensaje: {{ reserv.message }}</p>
+        </li>
+        <div style="display: flex; column-gap: 5px;">
+            <button>
+                <a href="{% url 'delete-messages' reserv.id %}">Eliminar</a> 
+            </button>
+        </div>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No se encontraron mensajes para el usuario buscado.</p>
+    {% endif %}           
+        </ul>
+    </b>
+</div>    
+    {% endblock formulario %}

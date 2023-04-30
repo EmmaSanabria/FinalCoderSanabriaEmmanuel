@@ -1,0 +1,42 @@
+Caso de prueba de registro exitoso:
+
+Objetivo: Verificar que un usuario pueda registrarse correctamente en el sistema.
+
+Pasos:
+
+Acceder a la página de registro.
+Ingresar los datos del usuario (nombre de usuario, correo electrónico y contraseña).
+Enviar el formulario.
+Resultado esperado: El sistema debe crear un nuevo usuario y redirigirlo a la página de inicio.
+Criterio de aceptación: El usuario debe poder acceder al sistema con las credenciales que ha registrado.
+
+
+
+
+Caso de prueba de agregar un producto como admin:
+
+Objetivo: Verificar que un administrador pueda agregar un nuevo producto al sistema.
+
+Pasos:
+
+Acceder a la página de administración.
+Seleccionar la opción "Agregar producto".
+Ingresar los datos del nuevo producto (nombre, descripción, precio, etc.).
+Guardar el producto.
+Resultado esperado: El sistema debe crear un nuevo producto y mostrarlo en la lista de productos.
+Criterio de aceptación: El producto debe aparecer en la lista de productos y estar disponible para su compra.
+
+
+
+Caso de prueba de enviar una reserva como usuario:
+
+Objetivo: Verificar que un usuario pueda enviar una reserva correctamente.
+
+Pasos:
+
+Acceder a la página de reservas.
+Seleccionar la opción "Crear reserva".
+Ingresar los detalles de la reserva (fecha, hora, número de personas, etc.).
+Enviar la reserva.
+Resultado esperado: El sistema debe guardar la reserva y mostrar un mensaje de confirmación.
+Criterio de aceptación: La reserva debe aparecer en la lista de reservas y estar disponible para su revisión por el administrador.
